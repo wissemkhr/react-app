@@ -9,10 +9,10 @@ export default defineConfig({
                 lines: 80
             }
         },
-       // reporters: ['junit'],
-       // outputFile: {
-       //     junit: './junit-report.xml'
-       // }
+       reporters: ['junit'],
+       outputFile: {
+           junit: './junit-report.xml'
+       }
 
     }
 });
