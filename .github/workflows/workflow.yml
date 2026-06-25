@@ -10,13 +10,19 @@ on:
 jobs:
   unit-test:
     name: Unit Test
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        nodejs_version: [18, 19, 20]
+        operating_system: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.operating_system }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup NodeJS
+      - name: Setup NodeJS Version - ${{ matrix.nodejs_version }}
         uses: actions/setup-node@v6
+        with: 
+          nodejs_version: ${{ matrix.nodejs_version }}
 
       - name: Install Dependencies
         run: npm install
