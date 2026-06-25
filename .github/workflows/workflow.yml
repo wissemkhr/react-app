@@ -23,4 +23,9 @@ jobs:
 
       - name: Unit Test
         run: npm test
-  
+
+      - name: Upload Test Result
+        uses: actions/artifact@v7
+        with:
+          name: Test Result
+          path: junit-report.xml
