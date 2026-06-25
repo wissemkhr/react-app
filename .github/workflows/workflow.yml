@@ -38,3 +38,25 @@ jobs:
         with:
           name: Test Result
           path: junit-report.xml
+  
+  code-coverage:
+    name: Code Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS Version
+        uses: actions/setup-node@v6
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Test Coverage
+        run: npm coverage
+
+      - name: Upload Test Result
+        uses: actions/upload-artifact@v7
+        with:
+          name: Test CoverageResult
+          path: coverage/clover.xml
