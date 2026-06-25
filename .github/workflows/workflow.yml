@@ -1,0 +1,26 @@
+name: CI-CD
+
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'feature/*'
+
+jobs:
+  unit-test:
+    name: Unit Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node
+
+      - name: Install Dependencies
+        run: npm Install
+
+      - name: Unit Test
+        run: npm test
+  

@@ -1,0 +1,11 @@
+{
+    "github.codespaces.defaultExtensions": [
+
+        "GitHub.codespaces",
+        "GitHub.vscode-pull-request-github",
+        "Github.copilot"
+    ],
+    "yaml.schemas": {
+  "https://json.schemastore.org/github-action.json": ".github/actions/*.{yml,yaml}"
+},
+}
