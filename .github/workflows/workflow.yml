@@ -53,4 +53,14 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: coverage_report
-          path: coverage
+          path: coverage 
+
+  docker:
+    name: Docker 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Docker login
+        uses: docker/login-action@v4
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
