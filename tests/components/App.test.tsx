@@ -8,7 +8,7 @@ describe('App', () => {
     it('should render welcome to Gitlab CI', () => {
         render(<App/>);
 
-        const heading = screen.getByText("Welcome to Gitlab CI!");
+        const heading = screen.getByText("Welcome to Gitlab CI!!!");
         expect(heading).toBeInTheDocument();
 
         const button = screen.getByRole('button')
