@@ -41,10 +41,10 @@ jobs:
         uses: actions/setup-node@v6
 
       - name: Install Dependencies
-        continue-on-error: true
         run: npm install 
 
       - name: Code coverage
+        continue-on-error: true
         run: npm run coverage
       
       - name: Upload The Coverage Report
