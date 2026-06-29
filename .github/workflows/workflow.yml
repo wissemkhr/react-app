@@ -26,7 +26,7 @@ jobs:
         run: npm run test
       
       - name: Upload The Unit Test Report
-        if: steps.unit_test.outcome == 'failure' || steps.unit_test.outcome == 'succee'
+        if: always()
         uses: actions/upload-artifact@v7
         with:
           name: unit_test_report
