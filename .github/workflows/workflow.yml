@@ -57,6 +57,7 @@ jobs:
 
   docker:
     name: Docker 
+    needs: [unit_test, code_coverage]
     runs-on: ubuntu-latest
     steps:
       - name: Docker login
