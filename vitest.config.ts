@@ -7,7 +7,8 @@ export default defineConfig({
             include: ['src/**/App.tsx'],
             thresholds:{
                 lines: 80
-            }
+            },
+            reportOnFailure: true
         },
        reporters: ['junit'],
        outputFile: {
