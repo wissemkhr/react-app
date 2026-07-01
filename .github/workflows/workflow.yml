@@ -77,4 +77,4 @@ jobs:
           tags: ${{ vars.DOCKERHUB_USERNAME }}/react-app/${{ github.sha }}
 
       - name: List Images
-        run: docker Images
+        run: docker images
