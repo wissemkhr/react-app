@@ -85,4 +85,4 @@ jobs:
           export IP=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' react-app)
           echo $IP
           docker ps 
-          docker run --rm alpine/curl http://$IP:5173/ | grep Gitlab_CI_CD
+          curl http://$IP:5173/ | grep Gitlab_CI_CD
