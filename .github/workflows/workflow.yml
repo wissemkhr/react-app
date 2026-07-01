@@ -78,3 +78,11 @@ jobs:
 
       - name: List Images
         run: docker images
+      
+      - name: Docker Test 
+        run: |
+          docker run --name react-app -d -p 5173:5173  ${{ vars.DOCKERHUB_USERNAME }}/react-app/${{ github.sha }}
+          export IP=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' react-app)
+          echo $IP
+          docker ps 
+          docker run --rm alpine/curl http://$IP:5173/ | grep Gitlab_CI_CD
